@@ -1,0 +1,38 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "airbnb-typescript",
+        "eslint-config-prettier",
+        "prettier"
+    ],
+    "rules": {
+        "import/prefer-default-export": "off",
+        "no-console": 1,
+        "jsx-a11y/anchor-is-valid": [
+            "error",
+            {
+                "components": ["Link"],
+                "specialLink": ["hrefLeft", "hrefRight"],
+                "aspects": ["invalidHref", "preferButton"]
+            }
+        ],
+        "jsx-a11y/label-has-associated-control": [
+            "error",
+            {
+                "controlComponents": ["FormInputText"]
+            }
+        ],
+        "no-warning-comments": [1, { "terms": ["TODO", "TOFIX", "BACKLOG"] }],
+        "react/destructuring-assignment": "off",
+        "react/no-array-index-key": "off",
+        "react/prop-types": "off"
+    },
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    }
+}

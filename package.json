@@ -1,0 +1,42 @@
+{
+  "name": "cibulka-skeleton",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "check-types": "tsc --noemit",
+    "lint": "eslint --fix --ext .ts --ext .tsx . && npm run check-types"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
+    "@sanity/client": "^2.11.0",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
+    "axios": "^0.21.1",
+    "framer-motion": "^4.1.17",
+    "next": "^11.0.1",
+    "next-redux-wrapper": "^7.0.2",
+    "next-sanity-image": "^3.1.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.10.1",
+    "react-jss": "^10.7.1",
+    "react-redux": "^7.2.4",
+    "react-select": "^4.3.1",
+    "tailwindcss": "^2.2.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-next": "^11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "postcss": "^8.2.13",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
+  }
+}
