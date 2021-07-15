@@ -39,7 +39,8 @@ class MyDocument extends Document<{
       styles: (
         <>
           {initialProps.styles}
-          <style id={SSR_STYLES_ID}>{registry.toString()}</style>
+          {/* eslint-disable-next-line react/no-danger */}
+          <style id={SSR_STYLES_ID} dangerouslySetInnerHTML={{ __html: registry.toString() }} />
         </>
       ),
     };
