@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { getErrorResponse } from 'src/helpers/fetch';
-import { queryToUrl, sanityClient } from 'src/helpers/sanity';
+import { sanityClient } from 'src/helpers/sanity';
 import { PostApiResponse, PostPayload, PostsApiResponse, PostsPayload } from 'src/types/sanity';
 
 // Fields

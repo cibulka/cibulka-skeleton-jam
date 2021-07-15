@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 
-import config from 'src/config';
 import { Localization, LocalizationValue, Translate } from 'src/types/translate';
 import commonLocalization from 'src/localization';
 import { isLocalizationValuePlural } from 'src/helpers/typeGuards';
+import { locales } from 'src/types/common';
 
 function pluralizeValue(value: LocalizationValue | string, count: number): string | undefined {
   if (isLocalizationValuePlural(value)) {
@@ -50,7 +50,7 @@ function getStringWithReplacements(
   return result;
 }
 
-const emptyLocalization = config.LOCALES.reduce((acc, curr) => {
+const emptyLocalization = locales.reduce((acc, curr) => {
   acc[curr] = {};
   return acc;
 }, {});
@@ -83,8 +83,7 @@ export default function useLocalization(
       // Allow to return empty string without console.log
       if (fallback === '') return '';
       // eslint-disable-next-line no-console
-      if (locale !== 'catchAll')
-        console.warn(`Translate: ${id} does not have a translation for ${usedLocale}.`);
+      if (locale !== 'catchAll') console.warn(`Translate: ${id} empty for ${usedLocale}.`);
       return fallback || id;
     }
 

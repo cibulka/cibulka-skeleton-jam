@@ -6,7 +6,6 @@ import { getPostThunk, getPostsThunk } from './actions';
 export function selectPost(payload: PostPayload): PostResponse {
   return useSelector((state) => {
     const { postPayload } = state.sanity;
-    console.log('PP', postPayload, payload);
     if (postPayload && postPayload.slug !== payload.slug)
       return {
         isFailure: false,

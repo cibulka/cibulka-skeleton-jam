@@ -27,6 +27,7 @@
     "tailwindcss": "^2.2.4"
   },
   "devDependencies": {
+    "@types/clean-css": "^4.2.5",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "eslint": "^7.30.0",

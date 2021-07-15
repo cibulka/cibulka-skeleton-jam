@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Select from 'react-select';
 
-import config from 'src/config';
 import useTranslate from 'src/hooks/useTranslate';
+import { locales, Locale } from 'src/types/common';
 
 const LocaleSwitch: FC<{
   className?: string;
@@ -16,7 +16,7 @@ const LocaleSwitch: FC<{
     return translate(`common.locales.${l}`, 1, {}, undefined, l);
   }
 
-  const otherLocales = config.LOCALES.filter((l) => l !== locale);
+  const otherLocales = locales.filter((l) => l !== locale);
 
   const href = isReady ? { pathname: route, query } : undefined;
 
@@ -36,7 +36,7 @@ const LocaleSwitch: FC<{
             value: l,
             label: getLocaleLabel(l),
           }))}
-          onChange={(l) => router.push(route, route, l)}
+          onChange={(localeNew: Locale) => router.push(route, route, { locale: localeNew })}
           value={locale}
         />
       )}

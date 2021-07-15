@@ -1,7 +1,7 @@
 module.exports = {
   i18n: {
-    locales: ['en', 'cs', 'catchAll'],
-    defaultLocale: 'catchAll',
+    locales: ['en', 'cs', 'LOCALE_CATCH_ALL'],
+    defaultLocale: 'LOCALE_CATCH_ALL',
   },
   images: {
     domains: ['cdn.sanity.io'],
@@ -9,13 +9,13 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/catchAll',
+        source: '/LOCALE_CATCH_ALL',
         destination: '/en',
         locale: false,
         permanent: false,
       },
       {
-        source: '/catchAll/:slug*',
+        source: '/LOCALE_CATCH_ALL/:slug*',
         destination: '/en/:slug*',
         locale: false,
         permanent: false,

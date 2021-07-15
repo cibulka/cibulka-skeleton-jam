@@ -22,6 +22,6 @@ export function getErrorResponse(
   };
 }
 
-export function isFirstServerRender(req: NextApiRequest) {
+export function isFirstServerRender(req: NextApiRequest): boolean {
   return req.url?.indexOf('/_next/data/') === -1;
 }
