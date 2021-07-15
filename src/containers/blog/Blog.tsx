@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 
 import BlogItems from 'src/components/blog-items/BlogItems';
+import Head from 'src/components/head/Head';
 import useTranslate from 'src/hooks/useTranslate';
 import { useDispatch } from 'src/store';
 import { getPostsThunk, selectPosts } from 'src/store/sanity';
@@ -23,17 +24,20 @@ const Blog: FC = () => {
   }, [page, requestedPage]);
 
   return (
-    <div className="flex flex-col flex-1 items-center justify-center">
-      <BlogItems
-        className="p-4 w-full"
-        error={error}
-        isFailure={isFailure}
-        isLoading={isLoading}
-        handleLoadMore={pagesTotal > page ? () => setRequestedPage((old) => old + 1) : undefined}
-        posts={posts}
-        title={translate('title')}
-      />
-    </div>
+    <>
+      <Head translate={translate} />
+      <div className="flex flex-col flex-1 items-center justify-center">
+        <BlogItems
+          className="p-4 w-full"
+          error={error}
+          isFailure={isFailure}
+          isLoading={isLoading}
+          handleLoadMore={pagesTotal > page ? () => setRequestedPage((old) => old + 1) : undefined}
+          posts={posts}
+          title={translate('pageTitle')}
+        />
+      </div>
+    </>
   );
 };
 

@@ -24,7 +24,9 @@ const LocaleSwitch: FC<{
     <div className={props.className}>
       {href && otherLocales.length === 1 && (
         <Link href={href} locale={otherLocales[0]}>
-          <a className={props.className}>{getLocaleLabel(otherLocales[0])}</a>
+          <a className={[props.className, 'underline'].filter(Boolean).join(' ')}>
+            {getLocaleLabel(otherLocales[0])}
+          </a>
         </Link>
       )}
       {/* TODO: Implement dropdown here */}

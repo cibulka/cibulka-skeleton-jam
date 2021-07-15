@@ -3,13 +3,13 @@ const localization = {
     common: {
       emptySection: 'Tento článek nemá obsah.',
     },
-    titleLoading: 'Načítáme článek ...',
+    pageTitleLoading: 'Načítáme článek ...',
   },
   en: {
     common: {
       emptySection: 'This blog post does not have content.',
     },
-    titleLoading: 'Loading blog post ...',
+    pageTitleLoading: 'Loading blog post ...',
   },
 };
 

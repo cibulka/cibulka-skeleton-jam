@@ -1,11 +1,21 @@
 import React, { FC } from 'react';
-import { useRouter } from 'next/router';
 
-// TODO: Authentication
-const Home: FC = () => {
-  const { query, ...router } = useRouter();
-  console.log('Q', query, router);
-  return <div className="flex flex-col flex-1 items-center justify-center">404 - Not found</div>;
+import Head from 'src/components/head/Head';
+import useTranslate from 'src/hooks/useTranslate';
+
+import localization from './NotFound.localization';
+
+const NotFound: FC = () => {
+  const translate = useTranslate(localization);
+
+  return (
+    <>
+      <Head translate={translate} />
+      <div className="flex flex-col flex-1 items-center justify-center">
+        {translate('pageTitle')}
+      </div>
+    </>
+  );
 };
 
-export default Home;
+export default NotFound;

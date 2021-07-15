@@ -1,9 +1,9 @@
 const localization = {
   cs: {
-    pageTitle: 'Blog',
+    pageTitle: '404',
   },
   en: {
-    pageTitle: 'Blog',
+    pageTitle: '404',
   },
 };
 

@@ -28,6 +28,7 @@ const localization = {
       en: 'Anglicky',
       ru: 'Rusky',
     },
+    siteTitle: 'cibulka-jam',
     submit: 'Uložit',
   },
   en: {
@@ -59,6 +60,7 @@ const localization = {
       en: 'English',
       ru: 'Russian',
     },
+    siteTitle: 'cibulka-jam',
     submit: 'Submit',
   },
   ru: {
