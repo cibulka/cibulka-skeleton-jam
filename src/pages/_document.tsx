@@ -8,8 +8,11 @@ import Document, {
   DocumentContext,
 } from 'next/document';
 import { SheetsRegistry, JssProvider, createGenerateId } from 'react-jss';
+import CleanCSS from 'clean-css';
 
 import config from 'src/config';
+
+const cleanCSS = new CleanCSS();
 
 class MyDocument extends Document<{
   pageProps: unknown;
@@ -34,13 +37,16 @@ class MyDocument extends Document<{
 
     const initialProps = await Document.getInitialProps(ctx);
 
+    let css: string = registry.toString();
+    if (css) css = cleanCSS.minify(css).styles;
+
     return {
       ...initialProps,
       styles: (
         <>
           {initialProps.styles}
           {/* eslint-disable-next-line react/no-danger */}
-          <style id={SSR_STYLES_ID} dangerouslySetInnerHTML={{ __html: registry.toString() }} />
+          <style id={SSR_STYLES_ID} dangerouslySetInnerHTML={{ __html: css }} />
         </>
       ),
     };
