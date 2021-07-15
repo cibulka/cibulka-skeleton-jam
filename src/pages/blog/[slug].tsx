@@ -7,7 +7,7 @@ import { isErrorResponse } from 'src/helpers/typeGuards';
 import { getPost, getPosts, getPostThunk, setServerState } from 'src/store/sanity';
 import BlogPost from 'src/containers/blog-post/BlogPost';
 import { PostServerResponse } from 'src/types/sanity';
-import { localeCatchAll } from 'src/types/common';
+import { LOCALE_CATCH_ALL } from 'src/types/config';
 
 type Props = {
   preloaded: boolean;
@@ -50,7 +50,7 @@ export const getStaticPaths: GetStaticPaths<{ locales: string[] }> = async ({ lo
   const paths = [];
   slugs.forEach((slug) => {
     locales.forEach((locale) => {
-      if (locale === localeCatchAll) return;
+      if (locale === LOCALE_CATCH_ALL) return;
       paths.push({
         params: { slug },
         locale,

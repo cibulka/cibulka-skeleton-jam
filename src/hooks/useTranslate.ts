@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { Localization, LocalizationValue, Translate } from 'src/types/translate';
 import commonLocalization from 'src/localization';
 import { isLocalizationValuePlural } from 'src/helpers/typeGuards';
-import { locales } from 'src/types/common';
+import { locales } from 'src/types/config';
 
 function pluralizeValue(value: LocalizationValue | string, count: number): string | undefined {
   if (isLocalizationValuePlural(value)) {

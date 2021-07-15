@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Select from 'react-select';
 
 import useTranslate from 'src/hooks/useTranslate';
-import { locales, Locale } from 'src/types/common';
+import { locales, Locale } from 'src/types/config';
 
 const LocaleSwitch: FC<{
   className?: string;
