@@ -9,7 +9,7 @@ import { locales, Locale } from 'src/types/config';
 const LocaleSwitch: FC<{
   className?: string;
 }> = (props) => {
-  const { locale, route, isReady, query, ...router } = useRouter();
+  const { asPath, locale, route, isReady, query, ...router } = useRouter();
   const translate = useTranslate();
 
   function getLocaleLabel(l: string): string {
@@ -18,12 +18,10 @@ const LocaleSwitch: FC<{
 
   const otherLocales = locales.filter((l) => l !== locale);
 
-  const href = isReady ? { pathname: route, query } : undefined;
-
   return (
     <div className={props.className}>
-      {href && otherLocales.length === 1 && (
-        <Link href={href} locale={otherLocales[0]}>
+      {otherLocales.length === 1 && (
+        <Link href={route} as={asPath} locale={otherLocales[0]}>
           <a className={[props.className, 'underline'].filter(Boolean).join(' ')}>
             {getLocaleLabel(otherLocales[0])}
           </a>

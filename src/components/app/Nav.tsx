@@ -31,7 +31,7 @@ const Nav: FC = () => {
                 {isActive ? (
                   <strong>{title}</strong>
                 ) : (
-                  <Link href={route}>
+                  <Link href={`/${route}`}>
                     <a className="underline">{title}</a>
                   </Link>
                 )}
