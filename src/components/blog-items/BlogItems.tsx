@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 
 import BlogItem from 'src/components/blog-item/BlogItem';
 import ErrorMessage from 'src/components/error-message/ErrorMessage';
-import useSizes from 'src/hooks/useSizes';
 import useTranslate from 'src/hooks/useTranslate';
 import { Post } from 'src/types/sanity';
 import { Translate } from 'src/types/translate';
@@ -22,9 +21,8 @@ const BlogItems: FC<{
   const defaultTranslate = useTranslate(localization);
   const translate = props.translate || defaultTranslate;
 
-  const sizes = useSizes('50vw', {
-    lg: '25vw',
-  });
+  // TODO: Do this hook
+  const sizes = undefined;
 
   return (
     <section className={props.className}>
