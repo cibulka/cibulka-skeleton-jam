@@ -17,6 +17,8 @@ const Layout: FC<{
   // Reset & custom global styles
   useGlobalStyles();
 
+  console.log('wtf botanique');
+
   return (
     <>
       <Head>
