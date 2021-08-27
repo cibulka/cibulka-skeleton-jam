@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import Head from 'src/components/head/Head';
 
 // TODO: Authentication
+// Test commit
 const Home: FC = () => (
   <>
     <Head />
