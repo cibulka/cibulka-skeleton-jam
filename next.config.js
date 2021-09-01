@@ -8,25 +8,29 @@ module.exports = {
   },
   i18n: {
     locales: LOCALES.concat(LOCALE_CATCH_ALL),
-    defaultLocale: LOCALE_CATCH_ALL,
+    locales: LOCALES,
+    defaultLocale: 'cs',
+    // defaultLocale: LOCALE_CATCH_ALL,
   },
   images: {
     domains: ['cdn.sanity.io'],
   },
   async redirects() {
-    return [
-      {
-        source: `/${LOCALE_CATCH_ALL}`,
-        destination: `/${LOCALES[0]}`,
-        locale: false,
-        permanent: false,
-      },
-      {
-        source: `/${LOCALE_CATCH_ALL}/:slug*`,
-        destination: `/${LOCALES[0]}/:slug*`,
-        locale: false,
-        permanent: false,
-      },
-    ];
+    return JSON.parse(
+      JSON.stringify([
+        {
+          source: `/${LOCALE_CATCH_ALL}`,
+          destination: '/en',
+          locale: false,
+          permanent: false,
+        },
+        {
+          source: `/${LOCALE_CATCH_ALL}/(!api/):slug*`,
+          destination: '/en/:slug*',
+          locale: false,
+          permanent: false,
+        },
+      ]),
+    );
   },
 };

@@ -60,6 +60,7 @@ export const slice = createSlice({
   },
 });
 
+export { getApiTestThunk } from './actions';
 export const { setTestValue } = slice.actions;
 
 export default slice.reducer;

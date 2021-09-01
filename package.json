@@ -1,8 +1,8 @@
 {
   "name": "cibulka-skeleton",
   "scripts": {
-    "dev": "node scripts/buildTheme.js && next",
-    "build": "node scripts/buildTheme.js && next build",
+    "dev": "next",
+    "build": "next build",
     "start": "next start",
     "check-types": "tsc --noemit",
     "lint": "eslint --fix --ext .ts --ext .tsx . && npm run check-types"
